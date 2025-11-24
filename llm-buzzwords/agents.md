@@ -37,9 +37,9 @@ reward.
 
 ## Model Context Protocol: MCP
 
-It is an open standard for connecting AI agents to external systems. Connecting agents to tools and data traditionally requires a custom integration for each pairing, creating fragmentation and duplicated effort that makes it difficult to scale truly connected systems. MCP provides a universal protocol—developers implement MCP once in their agent and it unlocks an entire ecosystem of integrations. See Anthropics MCP for more details [Anthropic MCP](https://www.anthropic.com/news/model-context-protocol) and [LangChain MCP](https://python.langchain.com/docs/integrations/model_context/overview)
+It is an open standard for connecting AI agents to external systems. Connecting agents to tools and data traditionally requires a custom integration for each pairing, creating fragmentation and duplicated effort that makes it difficult to scale truly connected systems. MCP provides a universal protocol—developers implement MCP once in their agent and it unlocks an entire ecosystem of integrations. See Anthropics MCP for more details [Anthropic MCP](https://www.anthropic.com/news/model-context-protocol).
 
 ## Resources
 
 - https://www.anthropic.com/engineering/code-execution-with-mcp
-- https://www.linkedin.com/posts/lfrodrigues_microsoft-has-the-best-free-generative-ai-activity-7395438036295004160-WuGy?utm_source=share&utm_medium=member_ios&rcm=ACoAAAgsCdEBOndS0OOxrrYhLAEt7zbbfCB2G7U
+- https://python.langchain.com/docs/integrations/model_context/overview
