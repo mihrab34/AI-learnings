@@ -68,14 +68,14 @@ Some prompting techniques include:
 Few-shot Prompting/Learning, aka in-context learning is a leading information prompting technique that allows a model to process multiple labeled examples before attempting a task. The purpose is to increase the LLMs capabilities to respond in context, expand the knowledge base and provide alignment.
 
 - **Chain of Thought**:
-Chain of Thought Prompting is a prompting technique that allows a model to reason step by step. The purpose is to increase the LLMs capabilities to respond in context, expand the knowledge base and provide alignment.
+Chain of Thought Prompting is a prompting technique that allows a model to reason step by step. The purpose is to allow the llm break down complex tasks into sequential reasoning steps. This improves the model's ability to handle complex reasoning and provide more accurate responses.
 
 - **Instruct**:
-Instruct Prompting is a prompting technique that allows a model to respond in a structured way by providing instructions to the model. 
+Instruct Prompting is a prompting technique that allows a model to respond in a structured way or behaviour by providing instructions to guide the model. It is Useful for getting consistent, formatted responses and often used together with few-shot learning / chain of thought.
 
-- **One Shot**:
+- **One Shot**: This technique provides a single labeled example before asking the model to perform the task. It is a middle ground between zero-shot and few-shot prompting. It helps guide the model with minimal context.
 
-- **Zero Shot**:
+- **Zero Shot**: This technique asks the model to perform a task without any examples or prior demonstrations. It relies on the model's pre-trained knowledge alone.   It is quick but may be less accurate for complex or specialized tasks.
 
 ## FineTuning
 Fine-tuning in LLMs is a transfer learning technique where a pre-trained model is further trained on a specific dataset for downstream tasks. There are various techniques for performing fine-tuning including AdaLoRA, LORA, QLORA etc.
