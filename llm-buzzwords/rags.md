@@ -37,3 +37,56 @@ generation process of RAG systems. It is used in a two-staged RAG pipeline where
 reranker algorithm is used to examines the details and contextual relevance of each
 in the initial set of retrieved documents to ensure it does not contain many irrelevant
 or marginally relevant entries due to the broad nature of the search.
+
+
+# Process of Building a RAG Application
+
+1. Define scope and data:
+Choose target tasks, response format, SLAs (latency/accuracy).
+Collect and clean source documents (PDFs, HTML, DB dumps, notes).
+
+2. Chunking / preprocessing:
+Split documents into chunks (sentences/paragraphs, semantic segs).
+Normalize text, remove noise, keep provenance metadata.
+
+3. Create embeddings:
+Pick an embedding model (Sentence Transformers, OpenAI embeddings, etc.).
+Encode chunks into vectors; store chunk id and metadata with each vector.
+
+4. Vector store & indexing: 
+Choose vector DB (FAISS, Milvus, Pinecone, Chroma, Weaviate).
+Index vectors, tune index parameters (distance metric, shards).
+
+5. Retrieval strategy:
+Implement similarity search (k-NN) for candidate chunks.
+Add filters/metadata queries to narrow scope (dates, source, tags).
+
+6. Reranking / MMR:
+Optionally rerank candidates with a cross-encoder or MMR to reduce redundancy and improve relevance.
+
+7. Prompt design / context assembly:
+Design prompt template that combines query + top-k retrieved chunks + instructions.
+Control context size to fit model token limits; select chunks by relevance and provenance.
+
+8. Generator integration:
+Connect your LLM (API or local) to consume assembled context and generate final output.
+Set generation params (temperature, top-p, max tokens, stop sequences, presence/frequency penalties).
+
+9. Grounding & attribution:
+Include provenance citations in responses.
+Implement fallback behavior for low-confidence retrievals (e.g., say “I don’t know”).
+
+10. Evaluation & iterating:
+Define metrics: accuracy/ROUGE/BLEU, faithfulness, hallucination rate, latency.
+Run human evaluation and automated tests; tune retriever, reranker, prompt template.
+
+11. Optimization & production concerns:
+Cache frequent queries, batch embedding calls, shard vector store.
+Monitor cost, latency, and correctness in production.
+Add logging, observability, and retraining/update pipelines for new documents.
+
+12. Security & compliance: 
+Ensure data privacy, access control, and sanitize sensitive content.
+Maintain versioning and rollback for model and index updates.
+
+Quick tool suggestions: LangChain/AutoGen for orchestration, FAISS/Chroma/Pinecone/Milvus for vector stores, sentence-transformers or OpenAI embeddings, cross-encoders for reranking
