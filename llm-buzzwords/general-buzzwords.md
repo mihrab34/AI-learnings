@@ -89,3 +89,8 @@ In LLMs, inference is the operational process of generating output.
 LLMs may not generate the same result every time because inference is a stochastic operation.
 
 input[trained model] --> sequence of tokens --> next predicted token[output]
+
+
+## Resources
+
+- https://github.com/microsoft/generative-ai-for-beginners/
